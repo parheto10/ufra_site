@@ -1,0 +1,101 @@
+{% extends 'layout/base.html' %}
+{% load staticfiles %}
+{% load posts_tags %}
+
+{% block title %}Poste_list{% endblock %}
+
+{% block content %}
+    {% include 'layout/navbar.html' %}
+    <div class="container">
+        <br />
+        {% if request.user.is_authenticated %}
+            <a href="#">
+                <button type="button" class="btn btn-primary">
+                    <i class="fa fa-plus" aria-hidden="true"></i>&nbsp; Ajouter un Poste
+                </button>
+            </a>
+        {% endif %}
+        <div class="row">
+            <div class="col-sm-8">
+                <form method='GET' action='' class="row" style="margin-top: 10px;">
+                    <div class="col-sm-12">
+                        <div class="input-group">
+                            <input class="form-control" type='text' name='q' placeholder='Chercher Un Post' value='{{ request.GET.q }}'/>
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                                </span>
+                        </div>
+                    </div>
+                </form>
+
+                <h1 class="text-center" style="margin-top: 3px">Liste des postes</h1>
+                <hr style="background-color: #75caeb !important; height:1px; margin-top: -5px" />
+                <div class="col-sm-12">
+                    {% for post in posts %}
+                        <div class="thumbnail">
+                            {% if post.image %}
+                                <img src="{{ post.image.url }}" class="img-responsive" alt="">
+                            {% endif %}
+                            <div class="caption">
+                                <h2><a href="{{ post.get_absolute_url }}">{{ post.titre }}</a></h2>
+                                <p class="date">
+                                    Publier le {{ post.publish }} par {{ post.auteur }}
+                                </p>
+                                <p class="tags">Genre : {{ post.tags.all|join:", " }}</p>
+                                {{ post.message|markdown|truncatewords:25 }}
+                            </div>
+                        </div>
+                    {% endfor %}
+                    
+                    <p>{% include "posts/paginator.html" with page=posts %}</p>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="row text-center">
+                    <div class="panel panel-info" style="margin-top: 10px">
+                        <div class="panel-heading"><h3 style="margin-top: -5px">Publications recente</h3></div>
+                        <div class="panel-body">
+                            {% show_latest_posts 4 %}
+                        </div>
+                    </div>
+                    <h3>Les plus Commenté</h3>
+                    {% get_post_commenter as get_post_commenter %}
+                    <ul>
+                        {% for post in get_post_commenter %}
+                            <li>
+                                <a href="{{ post.get_absolute_url }}">{{ post.titre }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                    {% for obj in object_list %}
+                    <div class="panel panel-primary">
+                        <div class="panel panel-heading">
+                            <h3 class="panel-title">{{ obj.titre }}</h3>
+                        </div>
+                        <div class="panel-body" style="margin-top: -20px">
+                            <div class="media">
+                                <div class="media-left media-top">
+                                    {% if obj.image %}
+                                         <img class="media-object img-thumbnail img-responsive" src='{{ obj.image.url }}' width="80" height="80" />
+                                    {% else %}
+                                        <img class="media-object img-thumbnail img-responsive" src='{% static 'img/male-avatar-2.png' %}' width="80" height="80" />
+                                    {% endif %}
+                                </div>
+                                <div class="media-body">
+                                    <h3 class="media-heading"><small><i class="fa fa-calendar" aria-hidden="true"></i> Ajouter il y a: {{ obj.ajouter_le|timesince }}</small></h3>
+                                    <p class="">{{ obj.detail|truncatechars_html:100 }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    <div class="col-md-12 text-center" style="margin-top: -5px">
+                        <a href="{% url 'annonces:annonces' %}" class="btn btn-primary">Voire Toute les Annonces &raquo;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include 'layout/footer.html' %}
+{% endblock %}
+

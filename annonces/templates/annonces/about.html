@@ -1,0 +1,111 @@
+{% extends 'layout/base.html' %}
+{% load  i18n %}
+{% load staticfiles %}
+
+{% block content %}
+{% include "layout/navbar.html" %}
+<div class="container">
+  <div class="page-header">
+        <h2 class="text-center"><i class="fa fa-info"></i> {% trans "A propos" %}</h2>
+        <p class="text-center text-muted">{% trans "UFRA-Abidjan" %}</p>
+      <hr style="background-color: #75caeb !important; height:2px; margin-top: -5px" />
+    </div>
+    <div class="row">
+        <div class="col-sm-8">
+                <div class="row">
+                <div class="panel panel-info text-center" style="margin-top: 30px">
+                    <div class="panel-boby text-center">                        
+                        <img style="margin-top: -70px;" class="img-circle" src="{% static 'img/directrice.jpg' %}" alt="Avatar Antonella De Chiara" width="140" height="140">
+                        <h2><a>{% trans "Mme. La Directrice" %}</a></h2>
+                        <p>
+                            {% trans "Bienvenue sur le site de l’UFRA (UNIVERSITE FRANCAISE D'ABIDJAN), Vous venez frapper à la bonne porte pour un avenir radieux. Préparez un diplôme du Groupe ESG de Paris, tout en restant à Abidjan/Côte d’Ivoire." %}
+                        </p>                        
+                    </div>
+                </div>  
+                <div class="thumbnail">
+                    <img class="img-responsive" src="{% static 'slide/slide1.jpg' %}" alt="UFRA-Abj">
+                    <div class="caption">
+                        <h3><a>{% trans "Qui Sommes Nous ?" %}</a></h3>
+                        <hr style="background-color: #75caeb !important; height:1px; margin-top: -5px" />
+                        {% blocktrans %}
+                            <p>L'Université Francaise d'Abidjan (UFRA) réunit 7 établissements supérieurs dans les domaines du Management, Comptabilité, Finance, Ressources Humaine,
+                            Commerce, Marketing, Publicité et L'Informatique. Le groupe compte un établissement de formation continue.</p>
+                            <p>La délocalisation en Côte d'Ivoire des diplôme Techniques Français de très haut niveau est l'unique objectif de l'UFRA et répond aux voeux formulés par
+                            de nombreux cadres et étudiants désirant se spécialisés dans les différentes fillières relevant du domaine du management, de l'informatique et de la
+                            gestion des entrepises. le but est de décrocher un Diplôme Supérieur francçais tout en resstant en Aidjan.</p>
+                        {% endblocktrans %}
+                    </div>
+                </div>
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="text-center"><i class="fa fa-university" aria-hidden="true"></i> {% trans "UNIVERSITE FRANCAISE D'ABIDJAN - UFRA" %}</h3>
+                    </div>
+                    <div class="panel boby" style="font-size: 16px; font-family: 'Open Sans', Helvetica, Arial, sans-serif;">
+                        <p class="text-center text-muted text-lead">{% trans "Préparer le Diplome d'une Grande Ecole Francaise tout en restant en Côte d'Ivoire" %}</p>
+                        <p class="text-center text-muted"> {% trans "Les Titres suivants sont décernés:" %}</p>
+                        <p class="text-center text-muted"><i class="fa fa-graduation-cap" aria-hidden="true"></i>BACHELOR BBA : BAC + 3 - <i class="fa fa-graduation-cap" aria-hidden="true"></i>MBA Spécialisés : BAC + 5 - <i class="fa fa-graduation-cap" aria-hidden="true"></i>DBA : BAC + 8</p>
+                    </div>
+                </div>                              
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="panel panel-info" style="margin-top: 30px">
+                <div class="panel panel-heading"><h3 class="text-center">{% trans "CONTACTS" %}</h3></div>
+               <div class="panel panel-boby" style="text-align: center">
+                    <p><i class="fa fa-map-marker"></i> Université Française d'Abidjan(UFRA)<br />
+                            Plateau Immeuble le Mali Rez-de-chaussée.</p>
+                        <p><i class="fa fa-phone"></i> Fixe: (225) 20 33 85 00</p>
+                        <p><i class="fa fa-mobile"></i> Portable: (225) 05 06 19 50 / 05 06 20 25</p>
+                        <p><i class="fa fa-print"></i> Faxe: (+225) 20 32 07 51</p>
+                        <p><i class="fa fa-envelope"></i> Email: <a href="mailto:info@ufra-ci.org">info@ufra-ci.org</a> / <a href="mailto:esgabj@hotmail.com">esgabj@hotmail.com</a></p>
+                </div>
+            </div>
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="text-center">{% trans "NOS ATOUTS" %}</h3>
+                </div>
+                <div class="panel-body text-center">
+                    <div class="caption">
+                        {% blocktrans %}
+                            <ul>
+                                <li>-&nbsp; Un corps Professroral compétent et dévoué:</li>
+                                <li>&nbsp &nbsp (Professeurs d'université, Consultants</li>
+                                <li>&nbsp &nbsp Internationaux, professionels confirmés)</li>
+                                <li>-&nbsp; Un réseaux de Partenaires Internationaux</li>
+                                <li>&nbsp &nbsp permettant des placements faciles des</li>
+                                <li>&nbsp &nbsp Etudiants dans les entreprises</li>
+                                <li>-&nbsp; UFRA-CI est Agrée par le FDFP</li>
+                            </ul>
+                        {% endblocktrans %}
+                    </div>
+                </div>
+            </div>
+            {% for obj in object_list %}
+            <div class="panel panel-primary">
+                <div class="panel panel-heading">
+                    <h3 class="panel-title">{{ obj.titre }}</h3>
+                </div>
+                <div class="panel-body" style="margin-top: -20px">
+                    <div class="media">
+                        <div class="media-left media-top">
+                            {% if obj.image %}
+                                 <img class="media-object img-thumbnail" src='{{ obj.image.url }}' class='img-responsive' width="80" height="80" />
+                            {% else %}
+                                <img class="media-object img-thumbnail" src='{% static 'img/male-avatar-2.png' %}' class='img-responsive' width="80" height="80" />
+                            {% endif %}
+                        </div>
+                        <div class="media-body">
+                            <h3 class="media-heading"><small><i class="fa fa-calendar" aria-hidden="true"></i> {% trans "Ajouter il y a:" %} {{ obj.ajouter_le|timesince }}</small></h3>
+                            <p class="">{{ obj.detail|truncatechars_html:100 }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% include 'layout/footer.html' %}
+{% endblock %}

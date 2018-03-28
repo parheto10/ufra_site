@@ -1,0 +1,99 @@
+{% extends 'layout/base.html' %}
+{% load i18n %}
+{% load staticfiles %}
+{% block head_extra %}
+{{ form.media }}
+{% endblock head_extra %}
+{% load bootstrap3 %}
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% bootstrap_messages %}
+{% block content %}
+         {% include "layout/navbar.html" %}
+        <div class="container" style="font-family: 'Open Sans', Helvetica, Arial, sans-serif;">
+                <h3 class="text-center">{{ titre }}</h3>
+            <div class="row text-center">
+                <div class="col-md-12">
+                    <a href="" class="btn btn-primary" data-toggle="modal" data-target="#inscriptionform">
+                        <i class="fa fa-user-plus" aria-hidden="true"></i> {% trans "Faire un Témoignage" %} &raquo;
+                    </a>
+                </div>
+            </div>
+            <!-- Modal -->
+            <div class="modal fade" id="inscriptionform" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title"><i class="fa fa-user-plus fa-2x" aria-hidden="true"></i>  {% trans "Formulaire de témoignage" %}</h4>
+                  </div>
+                  <div class="modal-body">
+                      <form method='POST' action='.' enctype='multipart/form-data'>{% csrf_token %}
+                            <fieldset>
+                                {% bootstrap_form form %}
+                                {% buttons %}
+                                    <button type="submit" class="btn btn-success">
+                                        {% bootstrap_icon "envelope" %}  {% trans "Envoyer" %}
+                                    </button>
+                                    <button type="reset" class="btn btn-danger">
+                                        {% bootstrap_icon "refresh" %}  {% trans "Annuler" %}
+                                    </button>
+                                {% endbuttons %}
+                            </fieldset>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-warning" data-dismiss="modal">{% trans "Fermer" %}</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <hr style="background-color: #75caeb !important; height:1px;" />
+            <br/>
+            {% for obj in object_list %}
+                <div class="row">
+                    <div class="col-sm-10 col-sm-offset-1">
+                        <div class="panel panel-primary">
+                            <div class="panel-body" style="margin-top: -5px">
+                                <div class="media">
+                                    <div class="media-left media-top">
+                                        {% if obj.image %}
+                                             <img class="media-object img-thumbnail" src='{{ obj.image.url }}' class='img-responsive' width="80" height="80" />
+                                        {% else %}
+                                            <img class="media-object img-thumbnail" src='{% static 'img/male-avatar-2.png' %}' class='img-responsive' width="80" height="80" />
+                                        {% endif %}
+                                    </div>
+                                    <div class="media-body">
+                                        <h3 class="media-heading"><small><span><i class="fa fa-user" aria-hidden="true"></i> par : {{ obj.nom }},  <i class="fa fa-calendar" aria-hidden="true"></i> le : {{ obj.cree_le }}</span></small></h3>
+                                        <p class="">{{ obj.texte }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+                <div class="row text-center">
+                    <div class="col-md-12">
+                        <div class="pagination">
+                            <ul class="pagination text-center" style="margin-top: -30px; text-align: center">
+                                {% if object_list.has_previous %}
+                                    <li><a href="?page={{ object_list.previous_page_number }}">&laquo;</a></li>
+                                {% else %}
+                                    <li class="disabled"><span>&laquo;</span></li>
+                                {% endif %}
+                                    <li class="active"><span>{% trans "Page" %} {{ object_list.number }} {% trans "sur" %} {{ object_list.paginator.num_pages }}</span></li>
+                                {% if object_list.has_next %}
+                                    <li><a href="?page={{ object_list.next_page_number }}">&raquo;</a></li>
+                                {% else %}
+                                    <li class="disabled"><span>&raquo;</span></li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+        </div>
+
+        {% include 'layout/footer.html' %}
+{% endblock %}

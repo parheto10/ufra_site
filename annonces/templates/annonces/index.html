@@ -1,0 +1,202 @@
+{% extends 'layout/base.html' %}
+{% load i18n %}
+{% load staticfiles %}
+
+{% block content %}
+     {% include "layout/navbar.html" %}
+     {% include "layout/slide.html" %}
+    <div class="container">
+        <div class="panel panel-info" style="margin-top: 1em">
+            <div class="panel-heading">
+                <h3 class="text-center"><i class="fa fa-university" aria-hidden="true"></i> {% trans "UNIVERSITE FRANCAISE D'ABIDJAN - UFRA" %}</h3>
+            </div>
+            <div class="panel boby" style="font-size: 16px; font-family: 'Open Sans', Helvetica, Arial, sans-serif;">
+                <p class="text-center text-muted text-lead">{% trans "Préparer le Diplôme d'une Grande Ecole Francaise tout en restant en Côte d'Ivoire" %}</p>
+                <p class="text-center text-muted"> {% trans "Les Titres suivants sont décernés:" %}</p>
+                <p class="text-center text-muted"><i class="fa fa-graduation-cap" aria-hidden="true"></i>BACHELOR BBA : BAC + 3 - <i class="fa fa-graduation-cap" aria-hidden="true"></i>MBA Spécialisés : BAC + 5 - <i class="fa fa-graduation-cap" aria-hidden="true"></i>DBA : BAC + 8</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="text-center text-uppercase"> {% trans 'Groupe ESG - Ecoles Partenaires' %}</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="thumbnail">
+                    <a href="http://esgci.com/" target="_blank"><img class="img-responsive" src="{% static 'logo_ecoles/esgci.jpg' %}" alt="" width="200" height="120">
+                       <h3 class="text-center">ECOLE SUPERIEURE DE GESTION ET COMMERCE INTERNATIONALE</h3>
+                    </a>
+                    <div class="caption">
+                        <ul style="margin-top: -5px">
+                            <li>-&nbsp; Marketing & Relations Internationales</li>
+                            <li>-&nbsp; Marketing & Commerce</li>
+                            <li>-&nbsp; Communication</li>
+                            <li>-&nbsp; Marketing du Tourisme et Hôtellerie</li>
+
+                        </ul>
+                        <p>
+                            <a target="_blank" href="http://esgci.com/brochure" class="btn btn-primary btn-block" role="button"><i class="fa fa-download"></i> &nbsp; Brochure</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="thumbnail">
+                    <a href="http://www.esgrh.fr/" target="_blank"><img class="img-responsive" src="{% static 'logo_ecoles/esgrh.jpg' %}" alt="" width="200" height="120">
+                       <h3 class="text-center">ECOLE SUPERIEURE DE GESTION DES RESSOURCES HUMAINES</h3>
+                    </a>
+                    <div class="caption">
+                        <ul style="margin-top: -5px">
+                            <li>-&nbsp; Bachelor RH</li>
+                            <li>-&nbsp; Master Management des Ressources humaines</li>
+                        </ul>
+                        <br/>
+                        <br/>
+                        <p>
+                            <a target="_blank" href="http://www.esgrh.fr/brochure" class="btn btn-primary btn-block" role="button"><i class="fa fa-download"></i> &nbsp; Brochure</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="thumbnail">
+                    <a href="http://www.esgf.com/" target="_blank"><img class="img-responsive" src="{% static 'logo_ecoles/esgf.jpg' %}" alt="" width="200" height="120">
+                       <h3 class="text-center">ECOLE SUPERIEURE DE GESTION ET FINANCE</h3>
+                    </a>
+                    <div class="caption">
+                        <ul style="margin-top: -5px">
+                            <li>-&nbsp; Audit & Expertise Comptable</li>
+                            <li>-&nbsp; Bancassurance</li>
+                            <li>-&nbsp; Marchés Financiers</li>
+                            <li>-&nbsp; Gestion Financière Internantionale</li>
+                        </ul>
+                        <p>
+                            <a target="_blank" href="http://www.esgf.com/brochure" class="btn btn-primary btn-block" role="button"><i class="fa fa-download"></i> &nbsp; Brochure</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="thumbnail">
+                    <a href="https://www.mba-esg.com/" target="_blank"><img class="img-responsive" src="{% static 'logo_ecoles/mba-esg.jpg' %}" alt="" width="200" height="120">
+                       <h3 class="text-center">ECOLE SUPERIEURE de GENIS INFORMATIQUE</h3>
+                    </a>
+                    <div class="caption">
+                        <ul style="margin-top: -5px">
+                            <li>-&nbsp; Réseaux Télécom</li>
+                            <li>-&nbsp; Système, Sécurité</li>
+                            <li>-&nbsp; Architechture Logiciel</li>
+                            <li>-&nbsp; Multimédia</li>
+                        </ul>
+                        <p>
+                            <a target="_blank" href="https://www.mba-esg.com/telechargez-brochure" class="btn btn-primary btn-block" role="button"><i class="fa fa-download"></i> &nbsp; Brochure</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="thumbnail">
+                    <a href="http://www.psbedu.paris/fr" target="_blank"><img class="img-responsive" src="{% static 'logo_ecoles/psb-esg.jpg' %}" alt="" width="200" height="120">
+                       <h3 class="text-center">PARIS SCHOOL OF BUSINESS</h3>
+                    </a>
+                    <div class="caption">
+                        <ul style="margin-top: -5px">
+                            <li>-&nbsp; Audiovisuel</li>
+                            <li>-&nbsp; Finance</li>
+                            <li>-&nbsp; Hôtellerie</li>
+                            <li>-&nbsp; Ressources Humaine</li>
+                        </ul>
+                        <br/>                        
+                        <p>
+                            <a target="_blank" href="http://www.psbedu.paris/fr/brochure" class="btn btn-primary btn-block" role="button"><i class="fa fa-download"></i> &nbsp; Brochure</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="thumbnail">
+                    <a target="_blank" href="http://www.esgi.fr/ecole-informatique.html"><img class="img-responsive" src="{% static 'logo_ecoles/logo_esgi.jpg' %}" alt="" width="200" height="120">
+                       <h3 class="text-center">ECOLE SUPERIEURE DE GENIE INFORMATIQUE</h3>
+                    </a>
+                    <div class="caption">
+                        <ul style="margin-top: -3px">
+                            <li>-&nbsp; Réseaux Télécom</li>
+                            <li>-&nbsp; Système, Sécurité</li>
+                            <li>-&nbsp; Archithecque Logiciel</li>
+                            <li>-&nbsp; Multimédia</li>
+                        </ul>
+                            <a target="_blank" href="http://www.esgi.fr/ecole-informatique/brochure-ecole-informatique.html" class="btn btn-primary btn-block" role="button"><i class="fa fa-download"></i> &nbsp; Brochure</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="testimonials">
+            <div class="row text-center">
+                <div class="col-lg-6">
+
+                    <div class="panel panel-default">
+                          <div class="panel-heading">
+                              <h2><a>{% trans "La Directrice" %}</a></h2>
+                          </div>
+                          <div class="panel-body text-center">
+                              <p class="text-center"><img class="img-circle" src="{% static 'img/directrice.jpg' %}" alt="la directrice" width="100"></p>
+                              <p class="text-lead text-center">
+                                {% trans "Bienvenue sur le site de l’UFRA (UNIVERSITE FRANCAISE D'ABIDJAN), Vous venez frapper à la bonne porte pour un avenir radieux. Préparez un diplôme du Groupe ESG de Paris, tout en restant à Abidjan/Côte d’Ivoire." %}
+                              </p>
+                          </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="thumbnail">
+                       <h3 style="color: red;">{% trans "Nos Principaux Atouts" %}</h3>
+                        <hr/>
+                        <div class="caption">
+                            {% blocktrans %}
+                                <ul style="font-size: 16px">
+                                    <li>-&nbsp; Un corps Professroral compétent et dévoué:</li>
+                                    <li>&nbsp &nbsp (Professeurs d'université, Consultants</li>
+                                    <li>&nbsp &nbsp Internationaux, professionels confirmés)</li>
+                                    <li>-&nbsp; Un réseaux de Partenaires Internationaux</li>
+                                    <li>&nbsp &nbsp permettant des placements faciles des</li>
+                                    <li>&nbsp &nbsp Etudiants dans les entreprises</li>
+                                    <li>-&nbsp; UFRA-CI est Agrée par le FDFP</li>
+                                </ul>
+                            {% endblocktrans %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="testimonials">
+            <div class="panel panel-primary" style="margin-top: 1em">
+                <div class="panel-heading">
+                    <h2 class="text-center text-uppercase" style="">{{ titre }}</h2>
+                </div>
+            </div>
+            <div class="row text-center">
+                {% for annonce in annonces %}
+                    <div class="col-lg-4">
+                        <h4>{{ annonce.titre }}</h4>
+                        <h3 class="media-heading"><small><i class="fa fa-calendar" aria-hidden="true"></i> {% trans "Ajouter le :" %} {{ annonce.ajouter_le }}</small></h3>
+                        <p>{{ annonce.detail | truncatechars_html:50 }}</p>
+                        <hr style="background-color: #75caeb !important; height:1px;" />
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="row text-center">
+                <div class="col-md-12">
+                    <a href="{% url 'annonces:annonces' %}" class="btn btn-primary">{% trans "Voire Toute les Annonces" %} &raquo;</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include 'layout/footer.html' %}
+{% endblock %}
+

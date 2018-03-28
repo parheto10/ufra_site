@@ -1,0 +1,56 @@
+{% extends 'layout/base.html' %}
+{% load i18n %}
+{% load staticfiles %}
+ {% include "layout/navbar.html" %}
+{% block content %}
+        {% include "layout/navbar.html" %}
+        <div class="container">
+                <h3 class="text-center">{% trans "{{ titre }}" %}</h3>
+            <hr style="background-color: #75caeb !important; height:1px;" />
+            {% for obj in object_list %}
+                <div class="row">
+                    <div class="col-sm-10 col-sm-offset-1">
+                        <div class="panel panel-primary">
+                            <div class="panel panel-heading">
+                                <h3 class="panel-title">{% trans "{{ obj.titre }}" %}</h3>
+                            </div>
+                            <div class="panel-body" style="margin-top: -20px">
+                                <div class="media">
+                                    <div class="media-left media-top">
+                                        {% if obj.image %}
+                                             <img class="media-object img-responsive img-thumbnail" src='{{ obj.image.url }}' width="80" height="80" />
+                                        {% endif %}
+                                    </div>
+                                    <div class="media-body">
+                                        <h3 class="media-heading"><small><i class="fa fa-calendar" aria-hidden="true"></i> {% trans "Ajouter il y a :" %} {{ obj.ajouter_le|timesince }}</small></h3>
+                                        <p class="">{{ obj.detail|linebreaks }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+                <div class="row text-center">
+                    <div class="col-md-12">
+                        <div class="pagination">
+                            <ul class="pagination text-center" style="margin-top: -30px; text-align: center">
+                                {% if object_list.has_previous %}
+                                  <li><a href="?page={{ object_list.previous_page_number }}">&laquo;</a></li>
+                                {% else %}
+                                    <li class="disabled"><span>&laquo;</span></li>
+                                {% endif %}
+                                <li class="active"><span>{% trans "Page" %} {{ object_list.number }} {% trans "sur" %} {{ object_list.paginator.num_pages }}</span></li>
+                                {% if object_list.has_next %}
+                                    <li><a href="?page={{ object_list.next_page_number }}">&raquo;</a></li>
+                                {% else %}
+                                    <li class="disabled"><span>&raquo;</span></li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+        </div>
+
+        {% include 'layout/footer.html' %}
+{% endblock %}

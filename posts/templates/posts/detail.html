@@ -1,0 +1,94 @@
+{% extends 'layout/base.html' %}
+{% load bootstrap3 %}
+{% load posts_tags %}
+
+{% block title %}{{ post.titre }}{% endblock %}
+
+{% block content %}
+    <div class="container" xmlns="http://www.w3.org/1999/html">
+        {% include 'layout/navbar.html' %}
+        <div class="row">
+            <p class="col-lg-12">
+                <h1 class="text-center">{{ post.titre }}</h1>
+                <hr style="background-color: #75caeb !important; height:1px;" />
+                {% if post.image %}
+                    <img src="{{ post.image.url }}" class="img-responsive" alt="">
+                {% endif %}
+
+                    <p class="text-danger" style="font-style: italic; margin-top:5px">
+                        <span><i class="fa fa-calendar"></i> Poter le  {{ post.publish }}  &middot; &middot;  <i class="fa fa-user"></i>  par  {{ post.auteur }}</span>
+                    </p>
+                    <h2 style="font-style: italic; font-size: 16px"><i class="fa fa-tags" aria-hidden="true"></i> Postes Similaire:
+                        {% for post in similar_posts %}
+                            <span><a href="{{ post.get_absolute_url }}">{{ post.titre }}, </a></span>
+                            {% empty %}
+                           <span> Aucun.</span>
+                        {% endfor %}
+                    </h2>
+
+                    <hr style="background-color: #75caeb !important; height:1px;" />
+                    <p class="text lead">
+                        {{ post.message|markdown }}
+                        <p>
+                            <a href="{% url "posts:partager" post.slug %}">
+                                Partager avec Un Ami
+                            </a>
+                        </p>
+                        <hr style="background-color: #75caeb !important; height:1px;" />
+                        {% with comments.count as total_comments %}
+                             <h4>
+                                <a href="" class="btn btn-primary" data-toggle="modal" data-target="#commentaireform">
+                                    <i class="fa fa-comment" aria-hidden="true"></i> Ajouter un Commentaire &raquo;
+                                </a> -
+                                {{ total_comments }} <i class="fa fa-comments" aria-hidden="true"></i> commentaire{{ total_comments|pluralize }}
+                            </h4>
+                        {% endwith %}
+                    </p>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="commentaireform" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title"><i class="fa fa-comment fa-2x" aria-hidden="true"></i>  Ajouter un Commentaire</h4>
+                          </div>
+                          <div class="modal-body">
+                              <form method='POST' action='.' enctype='multipart/form-data'>{% csrf_token %}
+                                    <fieldset>
+                                        {% bootstrap_form comment_form %}
+                                        {% buttons %}
+                                            <button type="submit" class="btn btn-success">
+                                              {% bootstrap_icon "check" %}  Commenter
+                                            </button>
+                                            <button type="reset" class="btn btn-danger">
+                                              {% bootstrap_icon "refresh" %}  Annuler
+                                            </button>
+                                        {% endbuttons %}
+                                    </fieldset>
+                            </form>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-warning" data-dismiss="modal">Fermer</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-10 col-sm-offset-1">
+                        <blockquote style="font-size: 14px; margin-top: -10px">
+                            {% for comment in comments %}
+                                <p style="margin-top: 5px">{{ comment.contenu|markdown }}</p>
+                                <footer style="margin-top: -10px; font-style: italic"> <i class="fa fa-comments" aria-hidden="true"></i> {{ comment.nom }} | il y a {{ comment.created|timesince }}</footer>
+                                {% empty %}
+                                <p>Aucun Commentaire Disponible pour cet Article</p>
+                            {% endfor %}
+                        </blockquote>
+                    </div>
+
+            </div>
+        </div>
+
+    </div>
+    {% include 'layout/footer.html' %}
+{% endblock %}
+

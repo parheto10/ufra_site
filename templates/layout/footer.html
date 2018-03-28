@@ -1,0 +1,50 @@
+{% load i18n %}
+<footer>
+   <div class="container">
+       <br/>
+        <div class="row">
+            <div class="col-lg-8">
+                <iframe
+                    style="width:100%;height:335px;"
+                    frameborder="0"
+                    scrolling="yes"
+                    marginheight="0"
+                    marginwidth="0"
+                    src="https://www.google.com/maps/embed/v1/place?q=plateau%20immeuble%20le%20mali&key=AIzaSyCCDA9djz-QKlR-H1SwpGm2-eGsfuG6_Ok" allowfullscreen>
+                </iframe>
+            </div>
+            <div class="col-lg-4">
+                <div class="panel panel-info">
+                    <div class="panel panel-heading"><h3 class="text-center">{% trans "CONTACTS" %}</h3></div>
+                   <div class="panel panel-boby" style="text-align: center">
+                        <p><i class="fa fa-map-marker"></i> Université Française d'Abidjan(UFRA)<br />
+                                Plateau Immeuble le Mali Rez-de-chaussée.</p>
+                            <p><i class="fa fa-phone"></i> Fixe: (225) 20 33 85 00</p>
+                            <p><i class="fa fa-mobile"></i> Portable: (225) 05 06 19 50 / 05 06 20 25 / 88 82 15 44</p>
+                            <p><i class="fa fa-print"></i> Faxe: (+225) 20 32 07 51</p>
+                            <p><i class="fa fa-envelope"></i> Email: <a href="mailto:info@ufra-ci.org">info@ufra-ci.org</a> / <a href="mailto:esgabj@hotmail.com">esgabj@hotmail.com</a></p>
+                   </div>
+                </div>
+            </div>
+        </div>       
+        <div class="text-center">        
+          <div class="panel panel-info" style="margin-top: 20px;">
+              <p style="margin-top: 5px;"> {% trans "Groupe ESG - Ecoles Partenaires :" %}
+                <a href="http://www.groupeesg.fr/">Groupe ESG</a>
+                <a href="http://www.psbedu.paris/fr">PSB Paris school of business </a>
+                <a href="http://www.esgci.com/mba-paris-alternance">MBA</a>
+                <a href="http://www.esgci.com/ecole-de-gestion">Ecole de gestion </a>
+                <a href="http://www.esgci.com/ecole-formation-rh-paris">Ecole RH</a>
+                <a href="http://www.esgci.com/esg-executive-education">ESG Executive </a>
+                <a href="http://www.esgci.com/dcg-alternance">Préparation DCG </a>
+                <a href="http://www.esgci.com/preparation-toeic">Préparation TOEIC </a>
+                <a href="http://www.esgci.com/ecole-de-communication-paris">Ecole communication</a>
+                <a href="http://www.esg.fr/">Ecoles esg province </a></li>
+                <a href="http://www.esgci.com/master-marketing-province">Master marketing bordeaux</a>
+             </p> 
+          </div>
+        </div>
+        <hr style="background-color: #75caeb !important; height:1px;" />
+       <p class="text-center">&copy; Copyright {% now 'Y' %} &middot; {% trans "Ufra-Abidjan &middot; Tous Droits Reservé" %}</p>
+   </div>
+</footer>

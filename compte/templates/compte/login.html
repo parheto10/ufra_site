@@ -1,0 +1,24 @@
+{% extends 'layout/base.html' %}
+{% load bootstrap3 %}
+{% block title %}Log-in{% endblock %}
+
+{% block content %}
+{% include "layout/navbar.html" %}
+    <div class="col-sm-4 col-md-4 col-lg-4 col-sm-offset-4" style="margin-top: 50px">
+        <p class="lead text-center">Utiliser le Formulaire ci-dessous pour vous Connecter</p>
+		<div class="login-panel panel panel-primary">
+            <div class="panel-heading">
+                <h1 class="panel-title text-center text-uppercase">Connexion</h1>
+            </div>
+            <div class="panel-body">
+                <form method="POST" action="." role="form">{% csrf_token %}
+                    <fieldset>
+                        {% bootstrap_form form %}
+        				<p class="text-center"><input type="submit" value="Se Connexion"></p>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

@@ -1,0 +1,140 @@
+{% extends 'layout/base.html' %}
+{% load i18n %}
+{% load staticfiles %}
+{% load posts_tags %}
+{# Load the tag library #}
+{% load bootstrap3 %}
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{# Display django.contrib.messages as Bootstrap alerts #}
+{% bootstrap_messages %}
+
+
+{% block content %}
+ {% include "layout/navbar.html" %}
+<!-- START MAP -->
+<div id="map" style="margin-top: 15px;">
+    <iframe
+        style="width: 100%; height: 400px;"
+        frameborder="0"
+        scrolling="no"
+        marginheight="0"
+        marginwidth="0"
+        src="https://www.google.com/maps/embed/v1/place?q=plateau%20immeuble%20le%20mali&key=AIzaSyCCDA9djz-QKlR-H1SwpGm2-eGsfuG6_Ok" allowfullscreen>
+    </iframe>    
+</div>
+
+<!-- Page Title -->
+<div class="page-title-container">
+    <div class="container">
+        <div class="row">
+            <div class="page-header">
+                <h1 class="text-center"><i class="fa fa-envelope"></i> {% trans "Contact / Remplir le formulaire ci-dessous pour nous contacter." %}</h1>
+                <hr style="background-color: #75caeb !important; height:2px;" />
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Message -->
+    <!--{% include 'layout/messages_display.html' %}-->
+<!-- Contact Us -->
+<div class="contact-us-container">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8">
+                <div class="panel panel-primary" >
+                    <div class="panel panel-heading"><h3 class="text-center">{% trans "Formulaire de Contact" %}</h3></div>
+                    <div class="panel panel-body">
+                        <form method="POST" enctype="multipart/form-data">{% csrf_token %}
+                            <fieldset>
+                                {% bootstrap_form form layout="inlines" %}
+                                {% buttons %}
+                                    <button type="submit" class="btn btn-primary btn-block">
+                                        {% bootstrap_icon "envelope" %}  {% trans "Envoyer" %}
+                                    </button>
+                                    <button type="reset" class="btn btn-danger btn-block">
+                                        {% bootstrap_icon "refresh" %}  {% trans "Annuler" %}
+                                    </button>
+                                {% endbuttons %}
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="row">
+                    <div class="panel panel-info">
+                        <div class="panel panel-heading"><h3 class="text-center">{% trans "CONTACTS" %}</h3></div>
+                       <div class="panel panel-boby" style="text-align: center">
+                            <p><i class="fa fa-map-marker"></i> Université Française d'Abidjan(UFRA)<br />
+                                    Plateau Immeuble le Mali Rez-de-chaussée.</p>
+                                <p><i class="fa fa-phone"></i> Fixe: (225) 20 33 85 00</p>
+                                <p><i class="fa fa-mobile"></i> Portable: (225) 05 06 19 50 / 05 06 20 25 / 88 82 15 44</p>
+                                <p><i class="fa fa-print"></i> Faxe: (+225) 20 32 07 51</p>
+                                <p><i class="fa fa-envelope"></i> Email: <a href="mailto:info@ufra-ci.org">info@ufra-ci.org</a> / <a href="mailto:esgabj@hotmail.com">esgabj@hotmail.com</a></p>
+                       </div>
+                    </div>
+                    <div class="panel panel-info" style="margin-top: 10px">
+                        <div class="panel-heading"><h3 style="margin-top: -5px">{% trans "Publications recente" %}</h3></div>
+                        <div class="panel-body">
+                            {% show_latest_posts 4 %}
+                        </div>
+                    </div>
+                    {% for obj in object_list %}
+                    <div class="panel panel-info">
+                        <div class="panel panel-heading">
+                            <h3 class="panel-title">{{ obj.titre }}</h3>
+                        </div>
+                        <div class="panel-body" style="margin-top: -20px">
+                            <div class="media">
+                                <div class="media-left media-top">
+                                    {% if obj.image %}
+                                         <img class="media-object img-thumbnail" src='{{ obj.image.url }}' class='img-responsive' width="80" height="80" />
+                                    {% else %}
+                                        <img class="media-object img-thumbnail" src='{% static 'img/male-avatar-2.png' %}' class='img-responsive' width="80" height="80" />
+                                    {% endif %}
+                                </div>
+                                <div class="media-body">
+                                    <h3 class="media-heading"><small><i class="fa fa-calendar" aria-hidden="true"></i> {% trans "Ajouter il y a:" %} {{ obj.ajouter_le|timesince }}</small></h3>
+                                    <p class="">{{ obj.detail|truncatechars_html:100 }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    <div class="col-md-12 text-center" style="margin-top: -5px">
+                        <a href="{% url 'annonces:annonces' %}" class="btn btn-primary">{% trans "Voire Toute les Annonces" %} &raquo;</a>
+                    </div>
+
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer>
+    <div class="container">
+        <div class="row">
+        <div class="col-sm-12 text-center">
+            <h3>{% trans "Groupe ESG - Ecoles Partenaires:" %} </h3>
+            <ul>
+                <a href="http://www.groupeesg.fr/">Groupe ESG</a>
+                <a href="http://www.psbedu.paris/fr">PSB Paris school of business </a>
+                <a href="http://www.esgci.com/mba-paris-alternance">MBA</a>
+                <a href="http://www.esgci.com/ecole-de-gestion">Ecole de gestion </a>
+                <a href="http://www.esgci.com/ecole-formation-rh-paris">Ecole RH</a>
+                <a href="http://www.esgci.com/esg-executive-education">ESG Executive </a>
+                <a href="http://www.esgci.com/dcg-alternance">Préparation DCG </a>
+                <a href="http://www.esgci.com/preparation-toeic">Préparation TOEIC </a>
+                <a href="http://www.esgci.com/ecole-de-communication-paris">Ecole communication</a>
+                <a href="http://www.esg.fr/">Ecoles esg province </a></li>
+                <a href="http://www.esgci.com/master-marketing-province">Master marketing bordeaux</a>
+            </ul>
+        </div>
+    </div>
+    <hr style="background-color: #75caeb !important; height: 2px;" />
+       <p class="text-center">&copy; Copyright {% now 'Y' %} &middot; {% trans "Ufra-Abidjan &middot; Tous Droits Reservé" %}</p>
+    </div>
+</footer>
+{% endblock content %}

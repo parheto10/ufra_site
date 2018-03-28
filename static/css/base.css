@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+body {
+    background: #fefefe url("../img/background.png");    
+}
+
+.navbar-brand {
+    font-family: 'Satisfy', cursive;
+    font-size: 2em;
+}
+
+h1 {
+    color: #777777;
+}
+
+.wmd-panel {
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+}
+
+.comment-reply {
+    display: none;
+}
+
+.jumbotron {
+    background-color:#1b7349;
+    color: #FFF;
+}
+
+.carousel-caption {
+    color: #f0ad4e;
+    text-shadow: #ffffff;
+}

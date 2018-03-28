@@ -1,0 +1,11 @@
+{% extends "layout/base.html" %}
+{% block title %}Déconnexion{% endblock %}
+{% block content %}
+{% include "layout/navbar.html" %}
+ <div class="col-sm-6 col-sm-offset-3">
+    <h1>Déconnexion</h1>
+     <p class="text-center">Merci pour le temps que vous avez accordé à ce site aujourd'hui.
+         <a href="{% url "compte:login" %}">Connectez-vous à nouveau</a>.
+     </p>
+ </div>
+{% endblock %}

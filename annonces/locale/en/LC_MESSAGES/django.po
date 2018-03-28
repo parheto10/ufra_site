@@ -1,0 +1,277 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-07-11 23:28+0000\n"
+"PO-Revision-Date: 2017-07-11 23:52+0000\n"
+"Last-Translator:   <admin@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Translated-Using: django-rosetta 0.7.13\n"
+
+#: .\forms.py:10
+msgid "Temoignage"
+msgstr "Temoignage"
+
+#: .\forms.py:20
+msgid "Nom et Prenoms"
+msgstr "Full name"
+
+#: .\forms.py:21
+msgid "Contacts"
+msgstr "Contact"
+
+#: .\forms.py:23
+msgid "message"
+msgstr "message"
+
+#: .\models.py:19 .\models.py:24
+msgid "titre"
+msgstr "title"
+
+#: .\models.py:21
+msgid "modifier_le"
+msgstr "update"
+
+#: .\models.py:22
+msgid "ajouter_le"
+msgstr "add"
+
+#: .\models.py:83
+msgid "nom"
+msgstr "name"
+
+#: .\models.py:84
+msgid "email"
+msgstr "e-mail"
+
+#: .\models.py:85
+msgid "texte"
+msgstr "text"
+
+#: .\models.py:87
+msgid "cree_le"
+msgstr "created"
+
+#: .\models.py:88
+msgid "modifie_le"
+msgstr "updated"
+
+#: .\templates\annonces\about.html:9
+msgid "A propos"
+msgstr "About"
+
+#: .\templates\annonces\about.html:10
+msgid "UFRA-Abidjan"
+msgstr "UFRA-Abidjan"
+
+#: .\templates\annonces\about.html:19
+msgid "Mme. La Directrice"
+msgstr ""
+
+#: .\templates\annonces\about.html:21 .\templates\annonces\index.html:150
+msgid ""
+"Bienvenue sur le site de l’UFRA (UNIVERSITE FRANCAISE D'ABIDJAN), Vous venez"
+" frapper à la bonne porte pour un avenir radieux. Préparez un diplôme du "
+"Groupe ESG de Paris, tout en restant à Abidjan/Côte d’Ivoire."
+msgstr ""
+
+#: .\templates\annonces\about.html:28
+msgid "Qui Sommes Nous ?"
+msgstr ""
+
+#: .\templates\annonces\about.html:30
+msgid ""
+"\n"
+"                            <p>L'Université Francaise d'Abidjan (UFRA) réunit 7 établissements supérieurs dans les domaines du Management, Comptabilité, Finance, Ressources Humaine,\n"
+"                            Commerce, Marketing, Publicité et L'Informatique. Le groupe compte un établissement de formation continue.</p>\n"
+"                            <p>La délocalisation en Côte d'Ivoire des diplôme Techniques Français de très haut niveau est l'unique objectif de l'UFRA et répond aux voeux formulés par\n"
+"                            de nombreux cadres et étudiants désirant se spécialisés dans les différentes fillières relevant du domaine du management, de l'informatique et de la\n"
+"                            gestion des entrepises. le but est de décrocher un Diplôme Supérieur francçais tout en resstant en Aidjan.</p>\n"
+"                        "
+msgstr ""
+
+#: .\templates\annonces\about.html:41 .\templates\annonces\index.html:11
+msgid "UNIVERSITE FRANCAISE D'ABIDJAN - UFRA"
+msgstr "UNIVERSITE FRANCAISE D'ABIDJAN - UFRA"
+
+#: .\templates\annonces\about.html:44
+msgid ""
+"Préparer le Diplome d'une Grande Ecole Francaise tout en restant en Côte "
+"d'Ivoire"
+msgstr ""
+
+#: .\templates\annonces\about.html:45 .\templates\annonces\index.html:15
+msgid "Les Titres suivants sont décernés:"
+msgstr ""
+
+#: .\templates\annonces\about.html:53 .\templates\annonces\contact.html:68
+msgid "CONTACTS"
+msgstr "CONTACTS"
+
+#: .\templates\annonces\about.html:65
+msgid "NOS ATOUTS"
+msgstr ""
+
+#: .\templates\annonces\about.html:69
+msgid ""
+"\n"
+"                            <ul>\n"
+"                                <li>-&nbsp; Un corps Professroral compétent et dévoué:</li>\n"
+"                                <li>&nbsp &nbsp (Professeurs d'université, Consultants</li>\n"
+"                                <li>&nbsp &nbsp Internationaux, professionels confirmés)</li>\n"
+"                                <li>-&nbsp; Un réseaux de Partenaires Internationaux</li>\n"
+"                                <li>&nbsp &nbsp permettant des placements faciles des</li>\n"
+"                                <li>&nbsp &nbsp Etudiants dans les entreprises</li>\n"
+"                                <li>-&nbsp; UFRA-CI est Agrée par le FDFP</li>\n"
+"                            </ul>\n"
+"                        "
+msgstr ""
+
+#: .\templates\annonces\about.html:86 .\templates\annonces\annonces.html:15
+#: .\templates\annonces\contact.html:87
+msgid "{{ obj.titre }}"
+msgstr "{{ obj.titre }}"
+
+#: .\templates\annonces\about.html:98 .\templates\annonces\contact.html:99
+msgid "Ajouter il y a:"
+msgstr "add since"
+
+#: .\templates\annonces\annonces.html:8 .\templates\annonces\index.html:180
+#: .\templates\annonces\temoignages.html:15
+msgid "{{ titre }}"
+msgstr "{{ titre }}"
+
+#: .\templates\annonces\annonces.html:25
+msgid "Ajouter il y a :"
+msgstr "add since"
+
+#: .\templates\annonces\annonces.html:43
+#: .\templates\annonces\temoignages.html:86
+msgid "Page"
+msgstr "Page"
+
+#: .\templates\annonces\annonces.html:43
+#: .\templates\annonces\temoignages.html:86
+msgid "sur"
+msgstr "to"
+
+#: .\templates\annonces\contact.html:33
+msgid "Contact / Remplir le formulaire ci-dessous pour nous contacter."
+msgstr "Contact Us"
+
+#: .\templates\annonces\contact.html:47
+msgid "Formulaire de Contact"
+msgstr "Contact Form"
+
+#: .\templates\annonces\contact.html:54
+#: .\templates\annonces\temoignages.html:37
+msgid "Envoyer"
+msgstr "Send"
+
+#: .\templates\annonces\contact.html:57
+#: .\templates\annonces\temoignages.html:40
+msgid "Annuler"
+msgstr "Cancel"
+
+#: .\templates\annonces\contact.html:79
+msgid "Publications recente"
+msgstr "Recent Publish"
+
+#: .\templates\annonces\contact.html:107 .\templates\annonces\index.html:195
+msgid "Voire Toute les Annonces"
+msgstr "All Announce"
+
+#: .\templates\annonces\contact.html:120
+msgid "Groupe ESG - Ecoles Partenaires:"
+msgstr "Groupe ESG - Partners:"
+
+#: .\templates\annonces\contact.html:137
+msgid "Ufra-Abidjan &middot; Tous Droits Reservé"
+msgstr "Ufra-Abidjan &middot; All Rights Reserved"
+
+#: .\templates\annonces\index.html:14
+msgid ""
+"Préparer le Diplôme d'une Grande Ecole Francaise tout en restant en Côte "
+"d'Ivoire"
+msgstr ""
+
+#: .\templates\annonces\index.html:23
+msgid "Groupe ESG - Ecoles Partenaires"
+msgstr "Groupe ESG - Partners"
+
+#: .\templates\annonces\index.html:145
+msgid "La Directrice"
+msgstr ""
+
+#: .\templates\annonces\index.html:157
+msgid "Nos Principaux Atouts"
+msgstr ""
+
+#: .\templates\annonces\index.html:160
+msgid ""
+"\n"
+"                                <ul style=\"font-size: 16px\">\n"
+"                                    <li>-&nbsp; Un corps Professroral compétent et dévoué:</li>\n"
+"                                    <li>&nbsp &nbsp (Professeurs d'université, Consultants</li>\n"
+"                                    <li>&nbsp &nbsp Internationaux, professionels confirmés)</li>\n"
+"                                    <li>-&nbsp; Un réseaux de Partenaires Internationaux</li>\n"
+"                                    <li>&nbsp &nbsp permettant des placements faciles des</li>\n"
+"                                    <li>&nbsp &nbsp Etudiants dans les entreprises</li>\n"
+"                                    <li>-&nbsp; UFRA-CI est Agrée par le FDFP</li>\n"
+"                                </ul>\n"
+"                            "
+msgstr ""
+
+#: .\templates\annonces\index.html:187
+msgid "Ajouter le :"
+msgstr "since"
+
+#: .\templates\annonces\temoignages.html:19
+msgid "Faire un Témoignage"
+msgstr ""
+
+#: .\templates\annonces\temoignages.html:29
+msgid "Formulaire de témoignage"
+msgstr "Temoignage Form"
+
+#: .\templates\annonces\temoignages.html:47
+msgid "Fermer"
+msgstr "Close"
+
+#: .\templates\annonces\temoignages.html:68
+msgid "par : {{ obj.nom }}"
+msgstr "by: {{ obj.nom }}"
+
+#: .\templates\annonces\temoignages.html:69
+msgid "{{ obj.texte }}"
+msgstr "{{ obj.texte }}"
+
+#: .\urls.py:10
+msgid "^temoigne/$"
+msgstr "^temoigne/$"
+
+#: .\urls.py:11
+msgid "^temoignage/$"
+msgstr "^temoignage/$"
+
+#: .\urls.py:12
+msgid "^annonces/$"
+msgstr "announce"
+
+#: .\urls.py:13
+msgid "^about/$"
+msgstr "about"
+
+#: .\urls.py:14
+msgid "^contact/$"
+msgstr "contact"

@@ -1,0 +1,88 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-07-11 23:21+0000\n"
+"PO-Revision-Date: 2017-07-11 23:32+0000\n"
+"Last-Translator:   <admin@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Translated-Using: django-rosetta 0.7.13\n"
+
+#: .\templates\layout\base.html:6
+msgid "UFRA-ABIDJAN"
+msgstr ""
+
+#: .\templates\layout\footer.html:18
+msgid "CONTACTS"
+msgstr ""
+
+#: .\templates\layout\footer.html:32
+msgid "Groupe ESG - Ecoles Partenaires :"
+msgstr ""
+
+#: .\templates\layout\footer.html:48
+msgid "Ufra-Abidjan &middot; Tous Droits Reservé"
+msgstr ""
+
+#: .\templates\layout\navbar.html:16
+msgid "Acceuil"
+msgstr ""
+
+#: .\templates\layout\navbar.html:17
+msgid "Forum"
+msgstr ""
+
+#: .\templates\layout\navbar.html:18
+msgid "Contacts"
+msgstr ""
+
+#: .\templates\layout\navbar.html:19
+msgid "A propos"
+msgstr ""
+
+#: .\templates\layout\navbar.html:24
+msgid "Langue"
+msgstr ""
+
+#: .\templates\layout\navbar.html:35
+msgid "Golden Book"
+msgstr ""
+
+#: .\templates\layout\navbar.html:44
+msgid "Bienvenus"
+msgstr ""
+
+#: .\templates\layout\navbar.html:45
+msgid "Deconnexion"
+msgstr ""
+
+#: .\templates\layout\navbar.html:47
+msgid "Connexion"
+msgstr ""
+
+#: .\ufra\settings.py:143
+msgid "Francais"
+msgstr ""
+
+#: .\ufra\settings.py:144
+msgid "Anglais"
+msgstr ""
+
+#: .\ufra\urls.py:44
+msgid "^posts/"
+msgstr ""
+
+#: .\ufra\urls.py:45
+msgid "^sitemap\\.xml$"
+msgstr ""

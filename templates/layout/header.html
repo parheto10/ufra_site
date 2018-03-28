@@ -1,0 +1,22 @@
+<div id="header" style="margin-top: 15px">
+    <span class="logo">Mon Profile</span>
+    {% if request.user.is_authenticated %}
+    <ul class="menu">
+    <li {% if section == "dashboard" %}class="selected"{% endif %}>
+    <a href="{% url "notes:dashboard" %}">Notes</a>
+    </li>
+    {% if request.user.is_authenticated %}
+    <li><a href="{% url "notes:password_change_form" %}">Modifier Mon Password</a></li>
+    <li><a href="{% url "notes:edit" %}">Modifier mon Profile</a></li>
+    {% endif %}
+    </ul>
+    {% endif %}
+    <span class="user">
+    {% if request.user.is_authenticated %}
+     Bienvenue {{ request.user.first_name }} {{ request.user.last_name }},
+    <a href="{% url "auth_logout" %}">Déconnexion</a>
+    {% else %}
+    <a href="{% url "auth_login" %}">Connexion</a>
+    {% endif %}
+    </span>
+</div>

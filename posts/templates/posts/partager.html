@@ -1,0 +1,28 @@
+{% extends 'layout/base.html' %}
+{% load bootstrap3 %}
+
+{% block title %}Partager un Poste{% endblock %}
+
+{% block content %}
+    {% include 'layout/navbar.html' %}
+
+    <div class="col-md-6 col-md-offset-3">
+        {% if sent %}
+            <h3>E-mail Envoyer avec Success</h3>
+            <p class="text-danger">
+                "{{ post.titre }}" a été envoyer avec success à {{ cd.to }}.
+            </p>
+            {% else %}
+            <div class="panel panel-info">
+                <div class="panel-heading"><h1>Partager "{{ post.titre }}" par e-mail</h1></div>
+                <div class="panel-body">
+                    <form action="." method="post">{% csrf_token %}
+                        {% bootstrap_form form %}
+                        <input type="submit" value="Envoyer E-mail">
+                    </form>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}
+
